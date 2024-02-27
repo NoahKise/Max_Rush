@@ -8,6 +8,7 @@ public partial class dog : CharacterBody2D
 	public float Gravity;
 	public CharacterBody2D Player;
 	public bool Chase = false;
+	private Vector2 prevVelocity;
 
 	//public float OriginalPlayerSpeed;
 	public const float ReducedSpeed = 150.0f;
@@ -17,6 +18,9 @@ public partial class dog : CharacterBody2D
 	{
 		Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
+		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
+		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Play("Nearby");
+
 		gdScriptNode = GetNode("../Player");
 	}
 
@@ -26,7 +30,7 @@ public partial class dog : CharacterBody2D
 		Vector2 velocity = Velocity;
 		if (Chase == true)
 		{
-			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
+			//GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
 			Player = GetNode<CharacterBody2D>("../Player");
 			Vector2 direction = (Player.Position - Position).Normalized();
 			if (direction.X > 0)
@@ -38,6 +42,16 @@ public partial class dog : CharacterBody2D
 				GetNode<AnimatedSprite2D>("AnimatedSprite2D").FlipH = true;
 			}
 			velocity.X = direction.X * Speed;
+
+			if (velocity == prevVelocity)
+			{
+				GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
+			}
+			else
+			{
+				GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
+			}
+
 		}
 		else
 		{
@@ -51,7 +65,7 @@ public partial class dog : CharacterBody2D
 		}
 		Velocity = velocity;
 		MoveAndSlide();
-
+		prevVelocity = velocity;
 	}
 
 	private void _on_player_detection_body_entered(Node2D body)
@@ -60,6 +74,7 @@ public partial class dog : CharacterBody2D
 		{
 			Player = GetNode<CharacterBody2D>("../Player");
 			Chase = true;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = true;
 			gdScriptNode.Call("set_speed", 100);
 		}
 	}
@@ -69,6 +84,7 @@ public partial class dog : CharacterBody2D
 		{
 			Player = GetNode<CharacterBody2D>("../Player");
 			Chase = false;
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 			gdScriptNode.Call("set_speed", 300);
 		}
 	}
