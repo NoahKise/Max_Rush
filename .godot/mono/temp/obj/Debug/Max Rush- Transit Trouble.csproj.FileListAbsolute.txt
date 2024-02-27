@@ -1,0 +1,17 @@
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.csproj.AssemblyReference.cache
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.AssemblyInfoInputs.cache
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.AssemblyInfo.cs
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.csproj.CoreCompileInputs.cache
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\Max Rush- Transit Trouble.deps.json
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\Max Rush- Transit Trouble.runtimeconfig.json
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\Max Rush- Transit Trouble.dll
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\Max Rush- Transit Trouble.pdb
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\GodotSharp.dll
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\bin\Debug\GodotSharpEditor.dll
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.csproj.CopyComplete
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.dll
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\refint\Max Rush- Transit Trouble.dll
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.pdb
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\Max Rush- Transit Trouble.genruntimeconfig.cache
+C:\Users\tpete\OneDrive\Desktop\19-epicodus\Max_Rush\.godot\mono\temp\obj\Debug\ref\Max Rush- Transit Trouble.dll

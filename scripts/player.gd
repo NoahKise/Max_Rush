@@ -32,8 +32,6 @@ func _physics_process(delta):
 	
 	velocity.x = speed * 2 * horizontal_direction
 	
-	print("Speed:", speed)
-	print("Velocity.x:", velocity.x)
 	
 	move_and_slide()
 	
