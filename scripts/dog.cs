@@ -3,17 +3,21 @@ using System;
 
 public partial class dog : CharacterBody2D
 {
-	public const float Speed = 100.0f;
+	public const float Speed = 75.0f;
 	public const float JumpVelocity = -400.0f;
 	public float Gravity;
 	public CharacterBody2D Player;
 	public bool Chase = false;
 
+	//public float OriginalPlayerSpeed;
+	public const float ReducedSpeed = 150.0f;
+	public Node gdScriptNode;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
 		Gravity = ProjectSettings.GetSetting("physics/2d/default_gravity").AsSingle();
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
+		gdScriptNode = GetNode("../Player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -56,7 +60,7 @@ public partial class dog : CharacterBody2D
 		{
 			Player = GetNode<CharacterBody2D>("../Player");
 			Chase = true;
-			GD.Print(Player.GlobalPosition);
+			gdScriptNode.Call("set_speed", 100);
 		}
 	}
 	private void _on_player_detection_body_exited(Node2D body)
@@ -65,7 +69,7 @@ public partial class dog : CharacterBody2D
 		{
 			Player = GetNode<CharacterBody2D>("../Player");
 			Chase = false;
-			// Replace with function body.
+			gdScriptNode.Call("set_speed", 300);
 		}
 	}
 }
