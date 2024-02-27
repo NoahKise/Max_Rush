@@ -1,0 +1,77 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd52p5d35mw3k"]
+
+[ext_resource type="Texture2D" uid="uid://b2afgnlt7dcl" path="res://assets/textures/bus/bus_frame_1.png" id="1_w86xl"]
+[ext_resource type="Texture2D" uid="uid://bghloj6j12yqp" path="res://assets/textures/bus/bus_frame_2.png" id="2_r2pc6"]
+[ext_resource type="Texture2D" uid="uid://mgh6c7ivnjbb" path="res://assets/textures/bus/bus_frame_3.png" id="3_1xkfb"]
+[ext_resource type="Texture2D" uid="uid://cyo0sseev0ast" path="res://assets/textures/bus/bus_frame_4.png" id="4_yuy2u"]
+[ext_resource type="Texture2D" uid="uid://db0e2efw31trh" path="res://assets/textures/bus/bus_frame_5.png" id="5_ypusg"]
+[ext_resource type="Texture2D" uid="uid://ctuuljteihty8" path="res://assets/textures/bus/bus_frame_6.png" id="6_0gqlu"]
+[ext_resource type="Texture2D" uid="uid://4de2fymhi6oo" path="res://assets/textures/bus/bus_frame_7.png" id="7_s6ig2"]
+[ext_resource type="Texture2D" uid="uid://c7048m2f28i7p" path="res://assets/textures/bus/bus_frame_8.png" id="8_haf2k"]
+[ext_resource type="Texture2D" uid="uid://0gxbsvfou7o3" path="res://assets/textures/bus/bus_frame_9.png" id="9_7562v"]
+[ext_resource type="Texture2D" uid="uid://c100qusrc6kbm" path="res://assets/textures/bus/bus_frame_10.png" id="10_jlnff"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_n78j6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w86xl")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_w86xl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_r2pc6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_1xkfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yuy2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_ypusg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0gqlu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s6ig2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_haf2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7562v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_jlnff")
+}],
+"loop": false,
+"name": &"Open",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3sx0l"]
+size = Vector2(219, 1)
+
+[node name="Bus" type="AnimatableBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = -1
+position = Vector2(2, 26)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_n78j6")
+animation = &"Open"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, -26)
+rotation = -6.28319
+scale = Vector2(2, 2)
+shape = SubResource("RectangleShape2D_3sx0l")
+one_way_collision = true

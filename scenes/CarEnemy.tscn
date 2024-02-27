@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvh0qangs7h4v"]
+
+[ext_resource type="Texture2D" uid="uid://c1vf3ga10or5a" path="res://assets/textures/enemies/car_animate_4x64.png" id="1_pj5gu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hbd3"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hdds"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8411"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejywc"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gk877"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hbd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hdds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8411")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejywc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8411")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hdds")
+}],
+"loop": true,
+"name": &"Roaming",
+"speed": 20.0
+}]
+
+[node name="CarEnemy" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_gk877")
+animation = &"Roaming"
