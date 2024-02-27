@@ -1,11 +1,4 @@
+res://scenes/Tiles.tscn
 res://scenes/TestWorld.tscn
-res://scenes/world.tscn
-res://scenes/player.tscn
-res://scenes/Bus.tscn
 res://scenes/CarEnemy.tscn
-res://scenes/CarEnemy.cs
-res://scripts/Bus.cs
-res://scripts/Global.cs
-res://scripts/Ladder.cs
-res://scripts/Player.cs
-res://scripts/CarEnemy.cs
+res://scenes/Sky.tscn

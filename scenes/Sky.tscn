@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://cbw40hl8hr4up"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_07hci"]
+
+[sub_resource type="Gradient" id="Gradient_o403v"]
+colors = PackedColorArray(0.00274076, 0, 0.626943, 1, 5.0056e-06, 0.642659, 0.908893, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fr7nd"]
+gradient = SubResource("Gradient_o403v")
+
+[node name="Sky" type="MeshInstance2D"]
+position = Vector2(7998, 800)
+rotation = -1.5708
+scale = Vector2(1600, 16000)
+mesh = SubResource("QuadMesh_07hci")
+texture = SubResource("GradientTexture1D_fr7nd")
