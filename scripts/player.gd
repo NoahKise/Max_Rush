@@ -18,10 +18,10 @@ func _physics_process(delta):
 		if velocity.y > 1000:
 			velocity.y = 1000
 	
-	if is_on_floor() && jump_count != 0:
+	if is_on_floor()&&jump_count != 0:
 		jump_count = 0
 			
-	if Input.is_action_just_pressed("jump") && jump_count < jump_max: #&& is_on_floor():
+	if Input.is_action_just_pressed("jump")&&jump_count < jump_max: # && is_on_floor():
 		velocity.y = -jump_force
 		jump_count += 1
 	
@@ -31,9 +31,6 @@ func _physics_process(delta):
 		switch_direction(horizontal_direction)
 	
 	velocity.x = speed * 2 * horizontal_direction
-	
-	print("Speed:", speed)
-	print("Velocity.x:", velocity.x)
 	
 	move_and_slide()
 	
@@ -48,12 +45,15 @@ func update_animations(horizontal_direction):
 		else:
 			ap.play("run")
 	else:
-		if velocity.y < 0 && jump_count == 2:
+		if velocity.y < 0&&jump_count == 2:
 			ap.play("double_jump")
-		elif velocity.y < 0  && jump_count == 1:
+		elif velocity.y < 0&&jump_count == 1:
 			ap.play("jump")
 		elif velocity.y > 0:
 			ap.play("fall")
 func switch_direction(horizontal_direction):
-	sprite.flip_h = (horizontal_direction == -1)
+	sprite.flip_h = (horizontal_direction == - 1)
 	sprite.position.x = horizontal_direction * 18
+
+func set_speed(new_speed):
+	speed = new_speed
