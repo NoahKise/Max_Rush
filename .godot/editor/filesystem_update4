@@ -6,3 +6,5 @@ res://scripts/player.gd
 res://scripts/dog.cs
 res://Player.cs
 res://scripts/global_variables.cs
+res://scenes/coffee.tscn
+res://scenes/coffee.cs

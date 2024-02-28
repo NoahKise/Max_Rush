@@ -1,6 +1,7 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1709070651
-::res://assets/::1709074879
+::res://::1709076677
+::res://assets/::1709078718
+coffee.png::CompressedTexture2D::1215831702895054806::1709078718::1709078718::1::::<><>::
 GameItemsAnims-Sheet.png::CompressedTexture2D::959176828468324746::1709074879::1709074879::1::::<><>::
 ::res://assets/textures/::1709053302
 Biker_attack1.png::CompressedTexture2D::7801891412011096227::1709052881::1709052881::1::::<><>::
@@ -21,11 +22,11 @@ Death.png::CompressedTexture2D::5702780407330170209::1709053302::1709053303::1::
 Hurt.png::CompressedTexture2D::4951102456295954113::1709053302::1709053303::1::::<><>::
 Idle.png::CompressedTexture2D::8408606479562589151::1709053302::1709053303::1::::<><>::
 Walk.png::CompressedTexture2D::8784480664767101450::1709053302::1709053303::1::::<><>::
-::res://scenes/::1709074269
-dog.tscn::PackedScene::1210848345036223226::1709074264::0::1::::<><>::uid://dr2grxmfqwiwd::::res://assets/textures/2 Dog 2/Idle.png<>res://scripts/dog.cs<>uid://dxfjd31cmnel3::::res://assets/textures/2 Dog 2/Walk.png
-player.tscn::PackedScene::7727379469857079344::1709074113::0::1::::<><>::res://scripts/player.gd<>uid://828jnuhs2pf6::::res://assets/textures/Biker_idle.png<>uid://cxuxabcick3k6::::res://assets/textures/Biker_run.png<>uid://beuf7hetbnnux::::res://assets/textures/Biker_jump.png<>uid://bh3rcqgkyurow::::res://assets/textures/Biker_doublejump.png<>uid://du5k5jl7xpctq::::res://assets/textures/Biker_death.png
-world.tscn::PackedScene::7124839136364547440::1709074269::0::1::::<><>::uid://didg2tm83550w::::res://scenes/player.tscn<>uid://risq3uw1r5p3::::res://scenes/dog.tscn
-::res://scripts/::1709074097
-dog.cs::CSharpScript::-1::1709074403::0::1::::<>CharacterBody2D<>::
+::res://scenes/::1709078392
+dog.tscn::PackedScene::1210848345036223226::1709078392::0::1::::<><>::uid://dr2grxmfqwiwd::::res://assets/textures/2 Dog 2/Idle.png<>res://scripts/dog.cs<>uid://dxfjd31cmnel3::::res://assets/textures/2 Dog 2/Walk.png<>uid://nwvrctssf7jq::::res://assets/GameItemsAnims-Sheet.png
+player.tscn::PackedScene::7727379469857079344::1709078392::0::1::::<><>::res://scripts/player.gd<>uid://828jnuhs2pf6::::res://assets/textures/Biker_idle.png<>uid://cxuxabcick3k6::::res://assets/textures/Biker_run.png<>uid://beuf7hetbnnux::::res://assets/textures/Biker_jump.png<>uid://bh3rcqgkyurow::::res://assets/textures/Biker_doublejump.png<>uid://du5k5jl7xpctq::::res://assets/textures/Biker_death.png
+world.tscn::PackedScene::7124839136364547440::1709078392::0::1::::<><>::uid://didg2tm83550w::::res://scenes/player.tscn<>uid://risq3uw1r5p3::::res://scenes/dog.tscn
+::res://scripts/::1709078002
+dog.cs::CSharpScript::-1::1709078002::0::1::::<>CharacterBody2D<>::
 player.cs::CSharpScript::-1::1709063737::0::1::::<><>::
-player.gd::GDScript::-1::1709074468::0::1::::<>CharacterBody2D<>::
+player.gd::GDScript::-1::1709077619::0::1::::<>CharacterBody2D<>::

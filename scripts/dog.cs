@@ -8,7 +8,7 @@ public partial class dog : CharacterBody2D
 	public float Gravity;
 	public CharacterBody2D Player;
 	public bool Chase = false;
-	private Vector2 prevVelocity;
+	//private Vector2 prevVelocity;
 
 	//public float OriginalPlayerSpeed;
 	public const float ReducedSpeed = 150.0f;
@@ -30,7 +30,7 @@ public partial class dog : CharacterBody2D
 		Vector2 velocity = Velocity;
 		if (Chase == true)
 		{
-			//GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
+			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
 			Player = GetNode<CharacterBody2D>("../Player");
 			Vector2 direction = (Player.Position - Position).Normalized();
 			if (direction.X > 0)
@@ -43,14 +43,14 @@ public partial class dog : CharacterBody2D
 			}
 			velocity.X = direction.X * Speed;
 
-			if (velocity == prevVelocity)
-			{
-				GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
-			}
-			else
-			{
-				GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
-			}
+			//if (velocity == prevVelocity)
+			//{
+				//GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
+			//}
+			//else
+			//{
+				//GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
+			//}
 
 		}
 		else
@@ -65,7 +65,7 @@ public partial class dog : CharacterBody2D
 		}
 		Velocity = velocity;
 		MoveAndSlide();
-		prevVelocity = velocity;
+		//prevVelocity = velocity;
 	}
 
 	private void _on_player_detection_body_entered(Node2D body)
