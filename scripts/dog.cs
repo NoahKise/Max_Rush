@@ -82,7 +82,7 @@ public partial class dog : CharacterBody2D
 			Player = GetNode<CharacterBody2D>("../player");
 			Chase = false;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
-			gdScriptNode.Call("set_speed", 300);
+			gdScriptNode.Call("set_speed", 400);
 		}
 	}
 }
