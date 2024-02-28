@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dexbao7vj6280"]
+[gd_scene load_steps=13 format=3 uid="uid://dexbao7vj6280"]
 
 [ext_resource type="PackedScene" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
@@ -6,6 +6,15 @@
 [ext_resource type="AudioStream" uid="uid://dbkw1vkao5gg5" path="res://audio/jump.mp3" id="3_0k6kp"]
 [ext_resource type="AudioStream" uid="uid://c88m7uiv2q2yf" path="res://audio/slide.mp3" id="4_c8i68"]
 [ext_resource type="AudioStream" uid="uid://c8hhbyso7nsmc" path="res://audio/music.mp3" id="4_w4j7l"]
+[ext_resource type="Script" path="res://scripts/Umbrella.gd" id="7_5mns1"]
+[ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="7_kcigv"]
+[ext_resource type="AudioStream" uid="uid://cbmdy4hrhfjw4" path="res://audio/splash.mp3" id="9_r22rl"]
+[ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="10_inmtp"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vfn5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ashpw"]
+size = Vector2(1.02256, 0.956526)
 
 [node name="LevelOne" type="Node2D"]
 
@@ -44,3 +53,55 @@ metadata/_edit_lock_ = true
 [node name="Level2" parent="Level/Level" instance=ExtResource("1_e2mjt")]
 position = Vector2(-8000, 0)
 metadata/_edit_lock_ = true
+
+[node name="bouncer" type="MeshInstance2D" parent="."]
+position = Vector2(260, 1206)
+scale = Vector2(66.5, 11.5)
+mesh = SubResource("QuadMesh_vfn5m")
+script = ExtResource("7_5mns1")
+
+[node name="BounceArea" parent="bouncer" instance=ExtResource("7_kcigv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bouncer/BounceArea"]
+position = Vector2(-4.76837e-07, -0.0434799)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ashpw")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="bouncer"]
+stream = ExtResource("9_r22rl")
+
+[node name="bouncer2" type="MeshInstance2D" parent="."]
+position = Vector2(477, 1205)
+scale = Vector2(66.5, 11.5)
+mesh = SubResource("QuadMesh_vfn5m")
+script = ExtResource("7_5mns1")
+
+[node name="BounceArea" parent="bouncer2" instance=ExtResource("7_kcigv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bouncer2/BounceArea"]
+position = Vector2(-4.76837e-07, -0.0434799)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ashpw")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="bouncer2"]
+stream = ExtResource("9_r22rl")
+
+[node name="bouncer3" type="MeshInstance2D" parent="."]
+position = Vector2(777, 1207)
+scale = Vector2(66.5, 11.5)
+mesh = SubResource("QuadMesh_vfn5m")
+script = ExtResource("7_5mns1")
+
+[node name="BounceArea" parent="bouncer3" instance=ExtResource("7_kcigv")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bouncer3/BounceArea"]
+position = Vector2(-4.76837e-07, -0.0434799)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ashpw")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="bouncer3"]
+stream = ExtResource("9_r22rl")
+
+[node name="Ladder" parent="." instance=ExtResource("10_inmtp")]
+position = Vector2(1212, 716)
+scale = Vector2(2, 2)

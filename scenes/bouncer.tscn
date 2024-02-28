@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://b6bxjhxpgfwx8"]
+
+[ext_resource type="Script" path="res://scripts/Umbrella.gd" id="1_ms1jv"]
+[ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="2_njrhm"]
+[ext_resource type="AudioStream" uid="uid://cbmdy4hrhfjw4" path="res://audio/splash.mp3" id="3_iv0cv"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_vfn5m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ashpw"]
+size = Vector2(1.02256, 0.956526)
+
+[node name="bouncer" type="MeshInstance2D"]
+position = Vector2(260, 1206)
+scale = Vector2(66.5, 11.5)
+mesh = SubResource("QuadMesh_vfn5m")
+script = ExtResource("1_ms1jv")
+
+[node name="BounceArea" parent="." instance=ExtResource("2_njrhm")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BounceArea"]
+position = Vector2(-4.76837e-07, -0.0434799)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_ashpw")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_iv0cv")
