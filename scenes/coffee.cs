@@ -3,19 +3,30 @@ using System;
 
 public partial class coffee : StaticBody2D
 {
+	public Timer delayTimer;
+	public Node gdScriptNode;
 
 	public override void _Ready()
 	{
 		gdScriptNode = GetNode("../player");
+		delayTimer = GetNode<Timer>("CoffeeTimer");
 	}
-	public Node gdScriptNode;
+	
 	private void _on_drank_body_entered(Node2D body)
 	{
 		if (body.Name == "player")
 		{
-			gdScriptNode.Call("set_speed", 450);
-			QueueFree();
+			gdScriptNode.Call("set_speed", 600);
+			delayTimer.Start();
+			Vector2 newPosition = new Vector2(0, -10000); // Set your desired position here
+			this.GlobalPosition = newPosition;
+			
 		}
 	}
+	private void _on_coffee_timer_timeout()
+	{
+		gdScriptNode.Call("set_speed", 400);
+	}
 }
+
 

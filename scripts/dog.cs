@@ -8,10 +8,9 @@ public partial class dog : CharacterBody2D
 	public float Gravity;
 	public CharacterBody2D Player;
 	public bool Chase = false;
-	//private Vector2 prevVelocity;
-	//public float OriginalPlayerSpeed;
-	public const float ReducedSpeed = 150.0f;
+
 	public Node gdScriptNode;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -83,7 +82,7 @@ public partial class dog : CharacterBody2D
 			Player = GetNode<CharacterBody2D>("../player");
 			Chase = false;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
-			gdScriptNode.Call("set_speed", 300);
+			gdScriptNode.Call("set_speed", 400);
 		}
 	}
 }
