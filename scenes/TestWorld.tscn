@@ -5,12 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://betycdmct1a0f" path="res://assets/textures/landscape/city_tileset/city_tileset/city_bg.png" id="3_oa2qa"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="3_ollf2"]
 [ext_resource type="PackedScene" uid="uid://dvh0qangs7h4v" path="res://scenes/CarEnemy.tscn" id="4_moya5"]
-
-[sub_resource type="Curve2D" id="Curve2D_go5v1"]
-_data = {
-"points": PackedVector2Array(0, 0, 0, 0, 974, 1230, 0, 0, 0, 0, 1823, 1229, 0, 0, 0, 0, 972, 1217)
-}
-point_count = 3
+[ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="6_0lngh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vj606"]
 texture = ExtResource("2_deu10")
@@ -267,21 +262,9 @@ sources/1 = SubResource("TileSetAtlasSource_tg2ld")
 z_index = 1
 position = Vector2(2215, 1280)
 
-[node name="player" parent="." instance=ExtResource("3_ollf2")]
-z_index = 1
-position = Vector2(158, 1344)
-
 [node name="CarEnemy" parent="." instance=ExtResource("4_moya5")]
-position = Vector2(391, 652)
+position = Vector2(1353, 1310)
 rotation = -3.11165
-scale = Vector2(1, 1)
-
-[node name="Path2D" type="Path2D" parent="."]
-curve = SubResource("Curve2D_go5v1")
-
-[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
-position = Vector2(974, 1230)
-rotation = -0.00117786
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(2, 2)
@@ -292,3 +275,10 @@ layer_1/tile_data = PackedInt32Array()
 
 [node name="TileMap2" type="TileMap" parent="."]
 format = 2
+
+[node name="Coffee" parent="." instance=ExtResource("6_0lngh")]
+position = Vector2(440, 1324)
+scale = Vector2(2, 2)
+
+[node name="player" parent="." instance=ExtResource("3_ollf2")]
+position = Vector2(121, 1344)

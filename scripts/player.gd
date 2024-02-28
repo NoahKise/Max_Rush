@@ -142,4 +142,3 @@ func bounce(bounce_velocity = BOUNCE_VELOCITY):
 
 func set_speed(new_speed):
 	speed = new_speed
-
