@@ -34,7 +34,6 @@ public partial class CoffeePath : Sprite2D
 		}
 		
 		
-		
-		GD.Print(pathFollow.HOffset);
+		 
 	}
 }
