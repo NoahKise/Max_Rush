@@ -11,6 +11,9 @@ extends CharacterBody2D
 @onready var slideRaycast1 = $SlideRaycast1
 @onready var slideRaycast2 = $SlideRaycast2
 @onready var bounce_raycasts = $BounceRaycasts
+@onready var jumpSound = $JumpSound
+@onready var slideSound = $SlideSound
+@onready var music = $Music
 
 var standing_cshape = preload("res://resources/player_standing_cshape.tres")
 var sliding_cshape = preload("res://resources/player_sliding_cshape.tres")
@@ -23,7 +26,11 @@ var is_sliding = false
 var stuck_under_object = false
 @export var last_button_pressed = "none"
 
-const BOUNCE_VELOCITY = -600 
+const BOUNCE_VELOCITY = -800 
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	music.play()
 
 func _physics_process(delta):
 	if is_climbing == false:
@@ -33,10 +40,10 @@ func _physics_process(delta):
 	elif is_climbing == true:
 		velocity.y += gravity
 		if Input.is_action_pressed("climb"):
-			velocity.y = -speed
+			velocity.y = -speed / 2
 			last_button_pressed = "up"
 		elif Input.is_action_pressed("slide"):
-			velocity.y = speed
+			velocity.y = speed / 2
 			last_button_pressed = "down"
 		elif last_button_pressed != "none":
 			velocity.y = 0
@@ -49,13 +56,15 @@ func _physics_process(delta):
 		jump_count = 0
 	
 	if Input.is_action_just_pressed("jump") && jump_count < jump_max && !stuck_under_object: #&& is_on_floor():
+		jumpSound.play()
 		stand()
 		velocity.y = -jump_force
 		jump_count += 1
 		
 	var horizontal_direction = Input.get_axis("move_left", "move_right")
 	
-	if Input.is_action_just_pressed("slide"):
+	if Input.is_action_just_pressed("slide") && is_climbing == false:
+		slideSound.play()
 		slide()
 	elif Input.is_action_just_released("slide"):
 		if above_empty():

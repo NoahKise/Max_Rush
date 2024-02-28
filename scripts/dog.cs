@@ -8,6 +8,7 @@ public partial class dog : CharacterBody2D
 	public float Gravity;
 	public CharacterBody2D Player;
 	public bool Chase = false;
+
 	public Node gdScriptNode;
 	
 	// Called when the node enters the scene tree for the first time.
@@ -17,7 +18,6 @@ public partial class dog : CharacterBody2D
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Play("Nearby");
-
 		gdScriptNode = GetNode("../player");
 	}
 
