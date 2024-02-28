@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://c8rlca6ptedhg"]
+[gd_scene load_steps=10 format=3 uid="uid://c8rlca6ptedhg"]
 
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_x0s5n"]
 [ext_resource type="PackedScene" uid="uid://bgrf1ubq03q6y" path="res://scenes/box.tscn" id="2_5o01w"]
 [ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="3_lggn6"]
+[ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="4_1pf7b"]
+[ext_resource type="Script" path="res://scripts/Umbrella.gd" id="4_ksmqt"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_xrfae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfq3o"]
 size = Vector2(291.5, 8.5)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kqv2i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_r47wn"]
+size = Vector2(64, 24)
 
 [node name="World" type="Node2D"]
 
@@ -59,3 +66,63 @@ shape = SubResource("RectangleShape2D_dfq3o")
 
 [node name="Box" parent="." instance=ExtResource("2_5o01w")]
 position = Vector2(1112, -75)
+
+[node name="Umbrella" type="StaticBody2D" parent="."]
+position = Vector2(1076, -103)
+script = ExtResource("4_ksmqt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella"]
+position = Vector2(32.1127, 10.9216)
+scale = Vector2(-63.2254, 22.8431)
+mesh = SubResource("QuadMesh_kqv2i")
+
+[node name="BounceArea" parent="Umbrella" instance=ExtResource("4_1pf7b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella/BounceArea"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_r47wn")
+
+[node name="Umbrella2" type="StaticBody2D" parent="."]
+position = Vector2(1907, -104)
+script = ExtResource("4_ksmqt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella2"]
+position = Vector2(32.1127, 10.9216)
+scale = Vector2(-63.2254, 22.8431)
+mesh = SubResource("QuadMesh_kqv2i")
+
+[node name="BounceArea" parent="Umbrella2" instance=ExtResource("4_1pf7b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella2/BounceArea"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_r47wn")
+
+[node name="Umbrella3" type="StaticBody2D" parent="."]
+position = Vector2(1399, -103)
+script = ExtResource("4_ksmqt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella3"]
+position = Vector2(32.1127, 10.9216)
+scale = Vector2(-63.2254, 22.8431)
+mesh = SubResource("QuadMesh_kqv2i")
+
+[node name="BounceArea" parent="Umbrella3" instance=ExtResource("4_1pf7b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella3/BounceArea"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_r47wn")
+
+[node name="Umbrella4" type="StaticBody2D" parent="."]
+position = Vector2(765, -103)
+script = ExtResource("4_ksmqt")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella4"]
+position = Vector2(32.1127, 10.9216)
+scale = Vector2(-63.2254, 22.8431)
+mesh = SubResource("QuadMesh_kqv2i")
+
+[node name="BounceArea" parent="Umbrella4" instance=ExtResource("4_1pf7b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella4/BounceArea"]
+position = Vector2(32, 11)
+shape = SubResource("RectangleShape2D_r47wn")

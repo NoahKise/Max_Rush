@@ -10,6 +10,7 @@ extends CharacterBody2D
 @onready var cshape = $CollisionShape2D
 @onready var slideRaycast1 = $SlideRaycast1
 @onready var slideRaycast2 = $SlideRaycast2
+@onready var bounce_raycasts = $BounceRaycasts
 
 var standing_cshape = preload("res://resources/player_standing_cshape.tres")
 var sliding_cshape = preload("res://resources/player_sliding_cshape.tres")
@@ -21,6 +22,8 @@ var slide_count = 0
 var is_sliding = false
 var stuck_under_object = false
 @export var last_button_pressed = "none"
+
+const BOUNCE_VELOCITY = -600 
 
 func _physics_process(delta):
 	if is_climbing == false:
@@ -70,6 +73,7 @@ func _physics_process(delta):
 	
 	velocity.x = speed * 2 * horizontal_direction
 	
+	_check_bounce(delta)
 	move_and_slide()
 	
 	update_animations(horizontal_direction)
@@ -119,3 +123,16 @@ func stand():
 func above_empty() -> bool:
 	var result = !slideRaycast1.is_colliding() && !slideRaycast2.is_colliding()
 	return result
+
+func _check_bounce(delta):
+	if velocity.y > 0:
+		for raycast in bounce_raycasts.get_children():
+			raycast.target_position = Vector2.DOWN * velocity * delta + Vector2.DOWN
+			raycast.force_raycast_update()
+			if raycast.is_colliding() && raycast.get_collision_normal() == Vector2.UP:
+				velocity.y = (raycast.get_collision_point() - raycast.global_position - Vector2.DOWN).y / delta
+				raycast.get_collider().entity.call_deferred("be_bounced_upon", self)
+				break
+
+func bounce(bounce_velocity = BOUNCE_VELOCITY):
+	velocity.y = bounce_velocity

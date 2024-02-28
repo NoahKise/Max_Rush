@@ -545,7 +545,7 @@ texture = ExtResource("2_hovvt")
 hframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, -26)
+position = Vector2(0, -26)
 shape = ExtResource("3_nhkrg")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -564,4 +564,27 @@ target_position = Vector2(0, -30)
 [node name="SlideRaycast2" type="RayCast2D" parent="."]
 position = Vector2(15, -26)
 target_position = Vector2(0, -30)
+collide_with_areas = true
+
+[node name="BounceRaycasts" type="Node2D" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="BounceRaycasts"]
+position = Vector2(-15, -2)
+enabled = false
+target_position = Vector2(0, 4)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RayCast2D2" type="RayCast2D" parent="BounceRaycasts"]
+position = Vector2(0, -2)
+enabled = false
+target_position = Vector2(0, 4)
+collision_mask = 2
+collide_with_areas = true
+
+[node name="RayCast2D3" type="RayCast2D" parent="BounceRaycasts"]
+position = Vector2(15, -2)
+enabled = false
+target_position = Vector2(0, 4)
+collision_mask = 2
 collide_with_areas = true

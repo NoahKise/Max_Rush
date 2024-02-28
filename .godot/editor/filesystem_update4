@@ -6,3 +6,6 @@ res://scenes/box.tscn
 res://scenes/ladder.tscn
 res://scripts/ladder.gd
 res://scripts/global.gd
+res://BounceArea.gd
+res://scripts/bounce_area.tscn
+res://scripts/Umbrella.gd
