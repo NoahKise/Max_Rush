@@ -3,7 +3,6 @@ extends Area2D
 func _on_body_entered(body):
 	if body.name == "player":
 		body.is_climbing = true
-		print("in ladder")
 
 
 func _on_body_exited(body):

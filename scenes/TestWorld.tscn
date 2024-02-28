@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dfqlfuvf3aklt"]
+[gd_scene load_steps=23 format=3 uid="uid://dfqlfuvf3aklt"]
 
 [ext_resource type="Texture2D" uid="uid://dndgkq2yijfc0" path="res://assets/textures/landscape/city_tileset/city_tileset/city.png" id="2_deu10"]
 [ext_resource type="PackedScene" uid="uid://cd52p5d35mw3k" path="res://scenes/Bus.tscn" id="2_ngi3u"]
@@ -7,9 +7,16 @@
 [ext_resource type="PackedScene" uid="uid://dvh0qangs7h4v" path="res://scenes/CarEnemy.tscn" id="4_moya5"]
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="6_0lngh"]
 [ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="7_lm48d"]
+[ext_resource type="AudioStream" uid="uid://cbmdy4hrhfjw4" path="res://audio/splash.mp3" id="8_10lnu"]
+[ext_resource type="AudioStream" uid="uid://dbkw1vkao5gg5" path="res://audio/jump.mp3" id="8_cjp1k"]
 [ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="8_xmw36"]
 [ext_resource type="Script" path="res://scripts/Umbrella.gd" id="9_qfxbm"]
+[ext_resource type="AudioStream" uid="uid://c88m7uiv2q2yf" path="res://audio/slide.mp3" id="9_to88s"]
 [ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="10_lsdu0"]
+[ext_resource type="AudioStream" uid="uid://cj4lo1mal2lef" path="res://audio/dogSound.mp3" id="11_5i00h"]
+[ext_resource type="AudioStream" uid="uid://c8hhbyso7nsmc" path="res://audio/music.mp3" id="15_88vuv"]
+
+[sub_resource type="GDScript" id="GDScript_rscx0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vj606"]
 texture = ExtResource("2_deu10")
@@ -260,12 +267,15 @@ terrain_set_0/terrain_5/color = Color(0.25098, 0.501961, 0.313726, 1)
 sources/0 = SubResource("TileSetAtlasSource_vj606")
 sources/1 = SubResource("TileSetAtlasSource_tg2ld")
 
+[sub_resource type="GDScript" id="GDScript_s4x7b"]
+
 [sub_resource type="QuadMesh" id="QuadMesh_t614y"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_66q4c"]
 size = Vector2(38.5, 11.5)
 
 [node name="TestWorld" type="Node2D"]
+script = SubResource("GDScript_rscx0")
 
 [node name="Bus" parent="." instance=ExtResource("2_ngi3u")]
 z_index = 1
@@ -295,11 +305,35 @@ position = Vector2(635, 1079)
 [node name="player" parent="." instance=ExtResource("3_ollf2")]
 position = Vector2(121, 1344)
 
+[node name="Music" type="AudioStreamPlayer2D" parent="player"]
+position = Vector2(-121, -1344)
+stream = ExtResource("15_88vuv")
+volume_db = -10.0
+autoplay = true
+script = SubResource("GDScript_s4x7b")
+
+[node name="JumpSound" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("8_cjp1k")
+volume_db = -11.334
+pitch_scale = 1.1
+
+[node name="SlideSound" type="AudioStreamPlayer2D" parent="player"]
+stream = ExtResource("9_to88s")
+volume_db = -10.0
+
 [node name="Dog" parent="." instance=ExtResource("7_lm48d")]
 position = Vector2(1020, 1280)
 
+[node name="DogSound" type="AudioStreamPlayer2D" parent="Dog"]
+stream = ExtResource("11_5i00h")
+
 [node name="Umbrella" type="StaticBody2D" parent="."]
 script = ExtResource("9_qfxbm")
+
+[node name="Splash" type="AudioStreamPlayer2D" parent="Umbrella"]
+position = Vector2(121, 1344)
+stream = ExtResource("8_10lnu")
+pitch_scale = 2.46
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella"]
 position = Vector2(575, 1344)
