@@ -1,6 +1,12 @@
+Label
+TextureRect
+Panel
+CanvasLayer
 AnimationPlayer
-Camera2D
+AnimatedSprite2D
 CollisionShape2D
+Area2D
+Camera2D
 MeshInstance2D
 StaticBody2D
 Sprite2D

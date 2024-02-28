@@ -1,11 +1,22 @@
-[gd_scene load_steps=4 format=3 uid="uid://c8rlca6ptedhg"]
+[gd_scene load_steps=8 format=3 uid="uid://c8rlca6ptedhg"]
 
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_x0s5n"]
+[ext_resource type="PackedScene" uid="uid://1ot4lfmfqo5m" path="res://coin.tscn" id="2_javqq"]
+[ext_resource type="Texture2D" uid="uid://jte4kdqyhcnm" path="res://assets/HUD/coin_gold.png" id="3_rrsig"]
+[ext_resource type="Script" path="res://scenes/HUD.gd" id="3_rtykb"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_xrfae"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dfq3o"]
 size = Vector2(291.5, 8.5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e4p4g"]
+bg_color = Color(0, 0, 0, 1)
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
 
 [node name="World" type="Node2D"]
 
@@ -51,3 +62,49 @@ mesh = SubResource("QuadMesh_xrfae")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Platform4"]
 position = Vector2(507.25, 447.25)
 shape = SubResource("RectangleShape2D_dfq3o")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("3_rtykb")
+
+[node name="Panel" type="Panel" parent="HUD"]
+offset_left = 2.0
+offset_top = 3.0
+offset_right = 63.0
+offset_bottom = 26.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_e4p4g")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+offset_left = 9.0
+offset_top = 7.0
+offset_right = 22.0
+offset_bottom = 20.0
+texture = ExtResource("3_rrsig")
+expand_mode = 3
+
+[node name="x" type="Label" parent="HUD"]
+offset_left = 27.0
+offset_top = -1.0
+offset_right = 41.0
+offset_bottom = 27.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 10
+text = "x"
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="HUD"]
+anchors_preset = -1
+anchor_left = -0.301
+anchor_top = -0.416
+anchor_right = -0.301
+anchor_bottom = -0.416
+offset_left = 134.32
+offset_top = 70.88
+offset_right = 175.32
+offset_bottom = 107.88
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 15
+text = "##"
+vertical_alignment = 1
+
+[node name="coin" parent="." instance=ExtResource("2_javqq")]
+position = Vector2(413, 81)
