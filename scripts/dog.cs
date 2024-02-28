@@ -9,7 +9,6 @@ public partial class dog : CharacterBody2D
 	public CharacterBody2D Player;
 	public bool Chase = false;
 	//private Vector2 prevVelocity;
-
 	//public float OriginalPlayerSpeed;
 	public const float ReducedSpeed = 150.0f;
 	public Node gdScriptNode;
@@ -20,7 +19,6 @@ public partial class dog : CharacterBody2D
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Idle");
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Play("Nearby");
-
 		gdScriptNode = GetNode("../player");
 	}
 
