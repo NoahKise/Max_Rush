@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@export var speed = 300
+@export var speed = 400
 @export var gravity = 40
-@export var jump_force = 400
+@export var jump_force = 600
 @export var is_climbing = false
 
 @onready var ap = $AnimationPlayer
@@ -72,7 +72,7 @@ func _physics_process(delta):
 	if horizontal_direction != 0:
 		switch_direction(horizontal_direction)
 	
-	velocity.x = speed * 2 * horizontal_direction
+	velocity.x = speed * horizontal_direction
 
 	_check_bounce(delta)
 
