@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dfqlfuvf3aklt"]
+[gd_scene load_steps=11 format=3 uid="uid://dfqlfuvf3aklt"]
 
 [ext_resource type="Texture2D" uid="uid://dndgkq2yijfc0" path="res://assets/textures/landscape/city_tileset/city_tileset/city.png" id="2_deu10"]
 [ext_resource type="PackedScene" uid="uid://cd52p5d35mw3k" path="res://scenes/Bus.tscn" id="2_ngi3u"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="3_ollf2"]
 [ext_resource type="PackedScene" uid="uid://dvh0qangs7h4v" path="res://scenes/CarEnemy.tscn" id="4_moya5"]
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="6_0lngh"]
+[ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="7_lm48d"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vj606"]
 texture = ExtResource("2_deu10")
@@ -282,3 +283,6 @@ scale = Vector2(2, 2)
 
 [node name="player" parent="." instance=ExtResource("3_ollf2")]
 position = Vector2(121, 1344)
+
+[node name="Dog" parent="." instance=ExtResource("7_lm48d")]
+position = Vector2(1020, 1280)

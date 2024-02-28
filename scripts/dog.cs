@@ -21,7 +21,7 @@ public partial class dog : CharacterBody2D
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Play("Nearby");
 
-		gdScriptNode = GetNode("../Player");
+		gdScriptNode = GetNode("../player");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -31,7 +31,7 @@ public partial class dog : CharacterBody2D
 		if (Chase == true)
 		{
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D").Play("Walk");
-			Player = GetNode<CharacterBody2D>("../Player");
+			Player = GetNode<CharacterBody2D>("../player");
 			Vector2 direction = (Player.Position - Position).Normalized();
 			if (direction.X > 0)
 			{
@@ -70,9 +70,9 @@ public partial class dog : CharacterBody2D
 
 	private void _on_player_detection_body_entered(Node2D body)
 	{
-		if (body.Name == "Player")
+		if (body.Name == "player")
 		{
-			Player = GetNode<CharacterBody2D>("../Player");
+			Player = GetNode<CharacterBody2D>("../player");
 			Chase = true;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = true;
 			gdScriptNode.Call("set_speed", 100);
@@ -80,9 +80,9 @@ public partial class dog : CharacterBody2D
 	}
 	private void _on_player_detection_body_exited(Node2D body)
 	{
-		if (body.Name == "Player")
+		if (body.Name == "player")
 		{
-			Player = GetNode<CharacterBody2D>("../Player");
+			Player = GetNode<CharacterBody2D>("../player");
 			Chase = false;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 			gdScriptNode.Call("set_speed", 300);
