@@ -1,10 +1,14 @@
-[gd_scene load_steps=10 format=3 uid="uid://c8rlca6ptedhg"]
 
-[ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_x0s5n"]
+[gd_scene load_steps=10 format=3 uid="uid://c8rlca6ptedhg"]
 [ext_resource type="PackedScene" uid="uid://bgrf1ubq03q6y" path="res://scenes/box.tscn" id="2_5o01w"]
 [ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="3_lggn6"]
 [ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="4_1pf7b"]
 [ext_resource type="Script" path="res://scripts/Umbrella.gd" id="4_ksmqt"]
+[gd_scene load_steps=6 format=3 uid="uid://c8rlca6ptedhg"]
+
+[ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_x0s5n"]
+[ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="2_owvck"]
+[ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="3_tadve"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_xrfae"]
 
@@ -23,6 +27,8 @@ position = Vector2(349, -146)
 
 [node name="Player" parent="." instance=ExtResource("1_x0s5n")]
 position = Vector2(160, 156)
+slide_on_ceiling = false
+floor_stop_on_slope = false
 
 [node name="Platform2" type="StaticBody2D" parent="."]
 position = Vector2(-361, -272)
@@ -126,3 +132,10 @@ mesh = SubResource("QuadMesh_kqv2i")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella4/BounceArea"]
 position = Vector2(32, 11)
 shape = SubResource("RectangleShape2D_r47wn")
+
+[node name="Dog" parent="." instance=ExtResource("2_owvck")]
+position = Vector2(318, 58)
+
+[node name="Coffee" parent="." instance=ExtResource("3_tadve")]
+position = Vector2(65, 146)
+

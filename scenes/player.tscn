@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://du5k5jl7xpctq" path="res://assets/textures/Biker_death.png" id="6_s58s8"]
 [ext_resource type="Texture2D" uid="uid://bgcxdowq0op87" path="res://assets/textures/Biker_climb.png" id="8_pallf"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j5y88"]
+size = Vector2(30, 50)
+
 [sub_resource type="Animation" id="Animation_ky6l1"]
 length = 0.001
 tracks/0/type = "value"
@@ -535,8 +538,6 @@ _data = {
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_x677n")
-speed = 150
-gravity = 20
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(17, -44)

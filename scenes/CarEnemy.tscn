@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://dvh0qangs7h4v"]
+
+[ext_resource type="Script" path="res://scripts/CarEnemy.cs" id="1_clhx0"]
+[ext_resource type="Texture2D" uid="uid://c1vf3ga10or5a" path="res://assets/textures/enemies/car_animate_4x64.png" id="1_pj5gu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hbd3"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(0, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1hdds"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(64, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y8411"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(128, 0, 64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ejywc"]
+atlas = ExtResource("1_pj5gu")
+region = Rect2(192, 0, 64, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gk877"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hbd3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hdds")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8411")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ejywc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y8411")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1hdds")
+}],
+"loop": true,
+"name": &"Roaming",
+"speed": 20.0
+}]
+
+[node name="CarEnemy" type="RigidBody2D"]
+script = ExtResource("1_clhx0")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_gk877")
+animation = &"Roaming"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+scale = Vector2(1.3, 1.3)
+polygon = PackedVector2Array(-15, -24, -23, -11, -41, -9, -48, -1, -48, 13, -45, 14, -40, 24, -29, 24, -23, 18, 18, 18, 23, 24, 36, 24, 39, 21, 39, 14, 44, 13, 48, 10, 48, 3, 27, -21, 19, -24)
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="OnVisibleOnScreenNotifier2DScreenExited"]

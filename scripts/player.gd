@@ -41,8 +41,9 @@ func _physics_process(delta):
 		elif last_button_pressed != "none":
 			velocity.y = 0
 	
-	if is_on_floor() && jump_count != 0:
+	if is_on_floor()&&jump_count != 0:
 		jump_count = 0
+
 		
 	if is_climbing == true && last_button_pressed != "none":
 		jump_count = 0
@@ -72,8 +73,9 @@ func _physics_process(delta):
 		switch_direction(horizontal_direction)
 	
 	velocity.x = speed * 2 * horizontal_direction
-	
+
 	_check_bounce(delta)
+
 	move_and_slide()
 	
 	update_animations(horizontal_direction)
@@ -96,16 +98,16 @@ func update_animations(horizontal_direction):
 		else:
 			ap.play("climb")
 	else:
-		if velocity.y < 0 && jump_count == 2:
+		if velocity.y < 0&&jump_count == 2:
 			ap.play("double_jump")
-		elif velocity.y < 0  && jump_count == 1:
+		elif velocity.y < 0&&jump_count == 1:
 			ap.play("jump")
 		elif velocity.y > 0:
 			ap.play("fall")
 func switch_direction(horizontal_direction):
-	sprite.flip_h = (horizontal_direction == -1)
+	sprite.flip_h = (horizontal_direction == - 1)
 	sprite.position.x = horizontal_direction * 18
-	
+
 func slide():
 	if is_sliding:
 		return
@@ -136,3 +138,8 @@ func _check_bounce(delta):
 
 func bounce(bounce_velocity = BOUNCE_VELOCITY):
 	velocity.y = bounce_velocity
+
+
+func set_speed(new_speed):
+	speed = new_speed
+
