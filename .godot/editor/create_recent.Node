@@ -1,6 +1,7 @@
-RayCast2D
-CollisionShape2D
 MeshInstance2D
+CollisionShape2D
+Area2D
+RayCast2D
 StaticBody2D
 AnimationPlayer
 Camera2D

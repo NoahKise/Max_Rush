@@ -3,3 +3,6 @@ res://scenes/player.tscn
 res://scripts/player.gd
 res://resources/player_standing_cshape.tres
 res://scenes/box.tscn
+res://scenes/ladder.tscn
+res://scripts/ladder.gd
+res://scripts/global.gd

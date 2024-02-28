@@ -3,6 +3,7 @@ extends CharacterBody2D
 @export var speed = 300
 @export var gravity = 40
 @export var jump_force = 400
+@export var is_climbing = false
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
@@ -14,21 +15,35 @@ var standing_cshape = preload("res://resources/player_standing_cshape.tres")
 var sliding_cshape = preload("res://resources/player_sliding_cshape.tres")
 
 var jump_max = 2
-var jump_count = 0
+@export var jump_count = 0
 var slide_max = 1
 var slide_count = 0
 var is_sliding = false
 var stuck_under_object = false
+@export var last_button_pressed = "none"
 
 func _physics_process(delta):
-	if !is_on_floor():
+	if is_climbing == false:
 		velocity.y += gravity
 		if velocity.y > 1000:
 			velocity.y = 1000
+	elif is_climbing == true:
+		velocity.y += gravity
+		if Input.is_action_pressed("climb"):
+			velocity.y = -speed
+			last_button_pressed = "up"
+		elif Input.is_action_pressed("slide"):
+			velocity.y = speed
+			last_button_pressed = "down"
+		elif last_button_pressed != "none":
+			velocity.y = 0
 	
 	if is_on_floor() && jump_count != 0:
 		jump_count = 0
-			
+		
+	if is_climbing == true && last_button_pressed != "none":
+		jump_count = 0
+	
 	if Input.is_action_just_pressed("jump") && jump_count < jump_max && !stuck_under_object: #&& is_on_floor():
 		stand()
 		velocity.y = -jump_force
@@ -71,6 +86,11 @@ func update_animations(horizontal_direction):
 				ap.play("slide")
 			else:
 				ap.play("run")
+	elif is_climbing == true && last_button_pressed != "none":
+		if velocity.y == 0:
+			ap.play("climb_idle")
+		else:
+			ap.play("climb")
 	else:
 		if velocity.y < 0 && jump_count == 2:
 			ap.play("double_jump")
@@ -86,8 +106,9 @@ func slide():
 	if is_sliding:
 		return
 	is_sliding = true
-	cshape.shape = sliding_cshape
-	cshape.position.y = -15
+	if is_climbing == false:
+		cshape.shape = sliding_cshape
+		cshape.position.y = -15
 func stand():
 	if is_sliding == false:
 		return
