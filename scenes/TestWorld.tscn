@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dfqlfuvf3aklt"]
+[gd_scene load_steps=16 format=3 uid="uid://dfqlfuvf3aklt"]
 
 [ext_resource type="Texture2D" uid="uid://dndgkq2yijfc0" path="res://assets/textures/landscape/city_tileset/city_tileset/city.png" id="2_deu10"]
 [ext_resource type="PackedScene" uid="uid://cd52p5d35mw3k" path="res://scenes/Bus.tscn" id="2_ngi3u"]
@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://dvh0qangs7h4v" path="res://scenes/CarEnemy.tscn" id="4_moya5"]
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="6_0lngh"]
 [ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="7_lm48d"]
+[ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="8_xmw36"]
+[ext_resource type="Script" path="res://scripts/Umbrella.gd" id="9_qfxbm"]
+[ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="10_lsdu0"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vj606"]
 texture = ExtResource("2_deu10")
@@ -257,6 +260,11 @@ terrain_set_0/terrain_5/color = Color(0.25098, 0.501961, 0.313726, 1)
 sources/0 = SubResource("TileSetAtlasSource_vj606")
 sources/1 = SubResource("TileSetAtlasSource_tg2ld")
 
+[sub_resource type="QuadMesh" id="QuadMesh_t614y"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_66q4c"]
+size = Vector2(38.5, 11.5)
+
 [node name="TestWorld" type="Node2D"]
 
 [node name="Bus" parent="." instance=ExtResource("2_ngi3u")]
@@ -281,8 +289,25 @@ format = 2
 position = Vector2(440, 1324)
 scale = Vector2(2, 2)
 
+[node name="Ladder" parent="." instance=ExtResource("8_xmw36")]
+position = Vector2(635, 1079)
+
 [node name="player" parent="." instance=ExtResource("3_ollf2")]
 position = Vector2(121, 1344)
 
 [node name="Dog" parent="." instance=ExtResource("7_lm48d")]
 position = Vector2(1020, 1280)
+
+[node name="Umbrella" type="StaticBody2D" parent="."]
+script = ExtResource("9_qfxbm")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Umbrella"]
+position = Vector2(575, 1344)
+scale = Vector2(36.25, -11.5)
+mesh = SubResource("QuadMesh_t614y")
+
+[node name="BounceArea" parent="Umbrella" instance=ExtResource("10_lsdu0")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Umbrella/BounceArea"]
+position = Vector2(576.75, 1344.75)
+shape = SubResource("RectangleShape2D_66q4c")

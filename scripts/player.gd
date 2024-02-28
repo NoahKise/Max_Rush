@@ -23,7 +23,7 @@ var is_sliding = false
 var stuck_under_object = false
 @export var last_button_pressed = "none"
 
-const BOUNCE_VELOCITY = -600 
+const BOUNCE_VELOCITY = -800 
 
 func _physics_process(delta):
 	if is_climbing == false:
@@ -33,10 +33,10 @@ func _physics_process(delta):
 	elif is_climbing == true:
 		velocity.y += gravity
 		if Input.is_action_pressed("climb"):
-			velocity.y = -speed
+			velocity.y = -speed / 2
 			last_button_pressed = "up"
 		elif Input.is_action_pressed("slide"):
-			velocity.y = speed
+			velocity.y = speed / 2
 			last_button_pressed = "down"
 		elif last_button_pressed != "none":
 			velocity.y = 0
