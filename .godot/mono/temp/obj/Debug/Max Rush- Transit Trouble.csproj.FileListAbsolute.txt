@@ -1,0 +1,17 @@
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/Max Rush- Transit Trouble.deps.json
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/Max Rush- Transit Trouble.runtimeconfig.json
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/Max Rush- Transit Trouble.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/ref/Max Rush- Transit Trouble.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/Max Rush- Transit Trouble.pdb
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/GodotSharp.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/bin/Debug/GodotSharpEditor.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.csproj.AssemblyReference.cache
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.GeneratedMSBuildEditorConfig.editorconfig
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.AssemblyInfoInputs.cache
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.AssemblyInfo.cs
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.csproj.CoreCompileInputs.cache
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.csproj.CopyComplete
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/ref/Max Rush- Transit Trouble.dll
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.pdb
+/home/henry/development-projects/Max_Rush/.godot/mono/temp/obj/Debug/Max Rush- Transit Trouble.genruntimeconfig.cache
