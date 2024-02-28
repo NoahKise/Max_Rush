@@ -1,8 +1,8 @@
 [gd_scene load_steps=7 format=3 uid="uid://dexbao7vj6280"]
 
-[ext_resource type="PackedScene" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
+[ext_resource type="PackedScene" uid="uid://cnthmrsxrbkd4" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
-[ext_resource type="PackedScene" path="res://scenes/CityTiles.tscn" id="1_y7q81"]
+[ext_resource type="PackedScene" uid="uid://dr2ojgluilg62" path="res://scenes/CityTiles.tscn" id="1_y7q81"]
 [ext_resource type="AudioStream" uid="uid://dbkw1vkao5gg5" path="res://audio/jump.mp3" id="3_0k6kp"]
 [ext_resource type="AudioStream" uid="uid://c88m7uiv2q2yf" path="res://audio/slide.mp3" id="4_c8i68"]
 [ext_resource type="AudioStream" uid="uid://c8hhbyso7nsmc" path="res://audio/music.mp3" id="4_w4j7l"]
