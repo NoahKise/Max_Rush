@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends MeshInstance2D
 
 @onready var splash = $Splash
 

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var gravity = 40
 @export var jump_force = 600
 @export var is_climbing = false
+@export var coins = 0
 
 @onready var ap = $AnimationPlayer
 @onready var sprite = $Sprite2D
