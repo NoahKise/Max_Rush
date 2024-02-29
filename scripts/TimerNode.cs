@@ -20,7 +20,7 @@ public partial class TimerNode : Node2D
 	
 	private void _on_game_time_timeout()
 	{
-		GetTree().ChangeSceneToFile("res://scenes/LevelComplete.tscn");
+		GetTree().ChangeSceneToFile("res://scenes/Failure.tscn");
 	}
 	
 }
