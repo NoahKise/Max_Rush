@@ -28,9 +28,9 @@ position = Vector2(-1, 16)
 rotation = -1.55356
 
 [node name="Coffee" type="Sprite2D" parent="Path2D/PathFollow2D"]
-position = Vector2(16.5839, 1.07288e-06)
+position = Vector2(15.9804, -1.27567)
 rotation = 1.5708
-scale = Vector2(1.375, 1.59375)
+scale = Vector2(2.00567, 2.32476)
 texture = ExtResource("1_4eh4i")
 script = ExtResource("3_3udsk")
 
