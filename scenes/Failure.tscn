@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://btmc8eg3gx4or"]
+
+[ext_resource type="Script" path="res://scripts/Failure.cs" id="1_rvuqj"]
+
+[sub_resource type="Theme" id="Theme_yslps"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm1qm"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4y38w"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_muaeg"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="Theme" id="Theme_va68h"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yxim8"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hkfg1"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ly6ea"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rvuqj")
+
+[node name="PlayAgain" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 80.0
+offset_right = 216.0
+offset_bottom = 112.0
+theme = SubResource("Theme_yslps")
+theme_override_styles/normal = SubResource("StyleBoxFlat_qm1qm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4y38w")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_muaeg")
+text = "Play again"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 200.0
+offset_bottom = 152.0
+theme = SubResource("Theme_va68h")
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_yxim8")
+theme_override_styles/hover = SubResource("StyleBoxFlat_hkfg1")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ly6ea")
+text = "Quit"
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
