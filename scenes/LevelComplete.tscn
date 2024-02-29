@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://blb7dkr8t1k1b"]
+[gd_scene load_steps=11 format=3 uid="uid://blb7dkr8t1k1b"]
 
 [ext_resource type="Script" path="res://scripts/LevelComplete.cs" id="1_1cjoy"]
+[ext_resource type="Texture2D" uid="uid://cudi370ufmblr" path="res://assets/LevelComplete.png" id="2_ny1ib"]
 
 [sub_resource type="Theme" id="Theme_y7nnk"]
 
@@ -71,6 +72,11 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_l2j5f")
 theme_override_styles/hover = SubResource("StyleBoxFlat_quo3a")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_sxuog")
 text = "Quit"
+
+[node name="LevelComplete" type="Sprite2D" parent="."]
+position = Vector2(160, 40)
+scale = Vector2(0.638581, 0.75)
+texture = ExtResource("2_ny1ib")
 
 [connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
