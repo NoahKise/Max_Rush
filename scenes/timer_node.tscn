@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://cb51angrho1ru"]
+[gd_scene load_steps=2 format=3 uid="uid://bkqaw8jhuti61"]
 
 [ext_resource type="Script" path="res://scripts/TimerNode.cs" id="1_ha4br"]
 
@@ -6,7 +6,7 @@
 script = ExtResource("1_ha4br")
 
 [node name="GameTime" type="Timer" parent="."]
-wait_time = 45.0
+wait_time = 55.0
 one_shot = true
 autostart = true
 
