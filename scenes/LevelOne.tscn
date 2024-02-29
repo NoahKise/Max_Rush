@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=20 format=3 uid="uid://dexbao7vj6280"]
-
+[gd_scene load_steps=21 format=3 uid="uid://dexbao7vj6280"]
 
 [ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
@@ -14,6 +12,7 @@
 [ext_resource type="Script" path="res://scripts/Umbrella.gd" id="7_456ag"]
 [ext_resource type="AudioStream" uid="uid://nf1pgymh2ouw" path="res://audio/slurp.mp3" id="7_etp1i"]
 [ext_resource type="AudioStream" uid="uid://chbu8jh7sdr7h" path="res://audio/busSound.mp3" id="8_qb44f"]
+[ext_resource type="AudioStream" uid="uid://ouqf88j5fvfo" path="res://audio/coinSound.mp3" id="9_ckgdu"]
 [ext_resource type="AudioStream" uid="uid://cbmdy4hrhfjw4" path="res://audio/splash.mp3" id="9_r22rl"]
 [ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="9_u5m5q"]
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="10_fqxxj"]
@@ -60,6 +59,7 @@ metadata/_edit_lock_ = true
 
 [node name="Dog" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(414, 1230)
+collision_layer = 16
 
 [node name="DogSound" type="AudioStreamPlayer2D" parent="Dog"]
 stream = ExtResource("5_cdjec")
@@ -74,6 +74,9 @@ stream = ExtResource("7_etp1i")
 
 [node name="coin" parent="." instance=ExtResource("11_survk")]
 position = Vector2(713, 1214)
+
+[node name="CoinSound" type="AudioStreamPlayer2D" parent="coin"]
+stream = ExtResource("9_ckgdu")
 
 [node name="Bus" parent="." instance=ExtResource("12_ihq31")]
 z_index = 10
@@ -121,7 +124,7 @@ stream = ExtResource("5_cdjec")
 [node name="player" parent="." instance=ExtResource("1_eruw3")]
 z_index = 15
 position = Vector2(-345, 504)
-collision_layer = 30
+collision_layer = 31
 
 [node name="Music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-21, -1272)

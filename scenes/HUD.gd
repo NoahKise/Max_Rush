@@ -6,7 +6,8 @@ func _ready():
 	$Coins.text = String(coins)
 
 func _physics_process(delta):
-	if coins == 28:
+	#if coins == 28:
+	pass
 		
 
 func _on_coin_collected():
