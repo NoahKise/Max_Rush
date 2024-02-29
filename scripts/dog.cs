@@ -3,6 +3,7 @@ using System;
 
 public partial class dog : CharacterBody2D
 {
+	public AudioStreamPlayer2D DogSound;
 	public const float Speed = 75.0f;
 	public const float JumpVelocity = -400.0f;
 	public float Gravity;
@@ -19,6 +20,7 @@ public partial class dog : CharacterBody2D
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = false;
 		GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Play("Nearby");
 		gdScriptNode = GetNode("../player");
+		DogSound = GetNode<AudioStreamPlayer2D>("DogSound");
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -73,6 +75,7 @@ public partial class dog : CharacterBody2D
 			Chase = true;
 			GetNode<AnimatedSprite2D>("AnimatedSprite2D2").Visible = true;
 			gdScriptNode.Call("set_speed", 100);
+			DogSound.Play();
 		}
 	}
 	private void _on_player_detection_body_exited(Node2D body)

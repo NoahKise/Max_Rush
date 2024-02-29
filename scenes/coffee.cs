@@ -20,7 +20,6 @@ public partial class coffee : StaticBody2D
 			delayTimer.Start();
 			Vector2 newPosition = new Vector2(0, -10000); // Set your desired position here
 			this.GlobalPosition = newPosition;
-			
 		}
 	}
 	private void _on_coffee_timer_timeout()

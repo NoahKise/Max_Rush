@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://dexbao7vj6280"]
+[gd_scene load_steps=20 format=3 uid="uid://dexbao7vj6280"]
 
-[ext_resource type="PackedScene" uid="uid://cnthmrsxrbkd4" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
+[ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
 [ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="1_gbr52"]
 [ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="1_s37pb"]
@@ -8,7 +8,10 @@
 [ext_resource type="AudioStream" uid="uid://dbkw1vkao5gg5" path="res://audio/jump.mp3" id="3_0k6kp"]
 [ext_resource type="AudioStream" uid="uid://c88m7uiv2q2yf" path="res://audio/slide.mp3" id="4_c8i68"]
 [ext_resource type="AudioStream" uid="uid://c8hhbyso7nsmc" path="res://audio/music.mp3" id="4_w4j7l"]
+[ext_resource type="AudioStream" uid="uid://d3vdxeb17xsd8" path="res://audio/dogWhineSound.mp3" id="5_cdjec"]
 [ext_resource type="Script" path="res://scripts/Umbrella.gd" id="7_456ag"]
+[ext_resource type="AudioStream" uid="uid://nf1pgymh2ouw" path="res://audio/slurp.mp3" id="7_etp1i"]
+[ext_resource type="AudioStream" uid="uid://chbu8jh7sdr7h" path="res://audio/busSound.mp3" id="8_qb44f"]
 [ext_resource type="AudioStream" uid="uid://cbmdy4hrhfjw4" path="res://audio/splash.mp3" id="9_r22rl"]
 [ext_resource type="PackedScene" uid="uid://risq3uw1r5p3" path="res://scenes/dog.tscn" id="9_u5m5q"]
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="10_fqxxj"]
@@ -56,8 +59,15 @@ metadata/_edit_lock_ = true
 [node name="Dog" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(414, 1230)
 
+[node name="DogSound" type="AudioStreamPlayer2D" parent="Dog"]
+stream = ExtResource("5_cdjec")
+pitch_scale = 0.97
+
 [node name="Coffee" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(925, 1242)
+
+[node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee"]
+stream = ExtResource("7_etp1i")
 
 [node name="coin" parent="." instance=ExtResource("11_survk")]
 position = Vector2(656, 1247)
@@ -66,20 +76,39 @@ position = Vector2(656, 1247)
 z_index = 10
 position = Vector2(11099, 1201)
 
+[node name="BusSound" type="AudioStreamPlayer2D" parent="Bus"]
+position = Vector2(-11099, -1201)
+stream = ExtResource("8_qb44f")
+
 [node name="Dog2" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(2222, 992)
+
+[node name="DogSound" type="AudioStreamPlayer2D" parent="Dog2"]
+stream = ExtResource("5_cdjec")
 
 [node name="Coffee2" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(2460, 978)
 
+[node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee2"]
+stream = ExtResource("7_etp1i")
+
 [node name="Coffee4" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(3887, 894)
+
+[node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee4"]
+stream = ExtResource("7_etp1i")
 
 [node name="Coffee3" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(5295, 409)
 
+[node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee3"]
+stream = ExtResource("7_etp1i")
+
 [node name="Dog3" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(5330, 1258)
+
+[node name="DogSound" type="AudioStreamPlayer2D" parent="Dog3"]
+stream = ExtResource("5_cdjec")
 
 [node name="player" parent="." instance=ExtResource("1_eruw3")]
 z_index = 15
