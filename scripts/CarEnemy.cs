@@ -59,7 +59,6 @@ public partial class CarEnemy : RigidBody2D
 		{
 			float progress = _pathFollow2D.Progress;
 			_pathFollow2D.Progress += _speed * (float)delta;
-			GD.Print(progress);
 			if (progress < _prevProgress)
 			{
 				_animatedSprite2D.FlipH = !_animatedSprite2D.FlipH;
