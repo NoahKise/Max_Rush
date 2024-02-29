@@ -94,9 +94,7 @@ scale = Vector2(0.5, 0.488095)
 sprite_frames = SubResource("SpriteFrames_cnti0")
 animation = &"spin"
 autoplay = "spin"
-
 frame_progress = 0.436543
-
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

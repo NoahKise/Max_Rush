@@ -1,7 +1,4 @@
-
-[gd_scene load_steps=20 format=3 uid="uid://dexbao7vj6280"]
-
-
+[gd_scene load_steps=24 format=3 uid="uid://dexbao7vj6280"]
 
 [ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
@@ -605,7 +602,6 @@ scale = Vector2(0.0298508, 0.0689655)
 stream = ExtResource("9_r22rl")
 volume_db = 5.153
 
-
 [node name="Bouncer7" type="MeshInstance2D" parent="."]
 position = Vector2(7499, 948)
 scale = Vector2(52.9991, 14.5)
@@ -813,39 +809,93 @@ scale = Vector2(3, 3.8)
 script = ExtResource("15_v303g")
 
 [node name="Panel" type="Panel" parent="HUD"]
-offset_left = -845.0
-offset_top = 208.0
-offset_right = -741.0
-offset_bottom = 253.0
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 116.0
+offset_bottom = 57.0
+scale = Vector2(0.2, 0.2)
 theme_override_styles/panel = SubResource("StyleBoxFlat_0uxvp")
 
 [node name="TextureRect" type="TextureRect" parent="HUD"]
 anchors_preset = -1
 anchor_bottom = 0.191
-offset_left = -833.0
-offset_top = 219.0
-offset_right = -811.0
-offset_bottom = 210.44
+offset_left = 15.0
+offset_top = 14.0
+offset_right = 37.0
+offset_bottom = 5.44
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("15_ahkyt")
 expand_mode = 2
 
 [node name="x" type="Label" parent="HUD"]
-offset_left = -803.0
-offset_top = 214.0
-offset_right = -784.0
-offset_bottom = 247.0
+offset_left = 21.0
+offset_top = 13.0
+offset_right = 40.0
+offset_bottom = 46.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 15
 text = "x"
 vertical_alignment = 1
 
 [node name="Coins" type="Label" parent="HUD"]
-offset_left = -785.0
-offset_top = 213.0
-offset_right = -746.0
-offset_bottom = 250.0
+offset_left = 24.0
+offset_top = 12.0
+offset_right = 63.0
+offset_bottom = 49.0
+scale = Vector2(0.2, 0.2)
 theme_override_colors/font_color = Color(1, 0.6, 0, 1)
 theme_override_font_sizes/font_size = 25
 text = "##"
 vertical_alignment = 1
 
+[connection signal="coin_collected" from="coin" to="HUD" method="_on_coin_coin_collected"]
+[connection signal="coin_collected" from="coin3" to="HUD" method="_on_coin_3_coin_collected"]
+[connection signal="coin_collected" from="coin4" to="HUD" method="_on_coin_4_coin_collected"]
+[connection signal="coin_collected" from="coin5" to="HUD" method="_on_coin_5_coin_collected"]
+[connection signal="coin_collected" from="coin6" to="HUD" method="_on_coin_6_coin_collected"]
+[connection signal="coin_collected" from="coin7" to="HUD" method="_on_coin_7_coin_collected"]
+[connection signal="coin_collected" from="coin8" to="HUD" method="_on_coin_8_coin_collected"]
+[connection signal="coin_collected" from="coin9" to="HUD" method="_on_coin_9_coin_collected"]
+[connection signal="coin_collected" from="coin10" to="HUD" method="_on_coin_10_coin_collected"]
+[connection signal="coin_collected" from="coin11" to="HUD" method="_on_coin_11_coin_collected"]
+[connection signal="coin_collected" from="coin12" to="HUD" method="_on_coin_12_coin_collected"]
+[connection signal="coin_collected" from="coin13" to="HUD" method="_on_coin_13_coin_collected"]
+[connection signal="coin_collected" from="coin14" to="HUD" method="_on_coin_14_coin_collected"]
+[connection signal="coin_collected" from="coin15" to="HUD" method="_on_coin_15_coin_collected"]
+[connection signal="coin_collected" from="coin16" to="HUD" method="_on_coin_16_coin_collected"]
+[connection signal="coin_collected" from="coin17" to="HUD" method="_on_coin_17_coin_collected"]
+[connection signal="coin_collected" from="coin18" to="HUD" method="_on_coin_18_coin_collected"]
+[connection signal="coin_collected" from="coin19" to="HUD" method="_on_coin_19_coin_collected"]
+[connection signal="coin_collected" from="coin20" to="HUD" method="_on_coin_20_coin_collected"]
+[connection signal="coin_collected" from="coin21" to="HUD" method="_on_coin_21_coin_collected"]
+[connection signal="coin_collected" from="coin22" to="HUD" method="_on_coin_22_coin_collected"]
+[connection signal="coin_collected" from="coin23" to="HUD" method="_on_coin_23_coin_collected"]
+[connection signal="coin_collected" from="coin24" to="HUD" method="_on_coin_24_coin_collected"]
+[connection signal="coin_collected" from="coin25" to="HUD" method="_on_coin_25_coin_collected"]
+[connection signal="coin_collected" from="coin26" to="HUD" method="_on_coin_26_coin_collected"]
+[connection signal="coin_collected" from="coin27" to="HUD" method="_on_coin_27_coin_collected"]
+[connection signal="coin_collected" from="coin28" to="HUD" method="_on_coin_28_coin_collected"]
+[connection signal="coin_collected" from="coin29" to="HUD" method="_on_coin_29_coin_collected"]
+[connection signal="coin_collected" from="coin30" to="HUD" method="_on_coin_30_coin_collected"]
+[connection signal="coin_collected" from="coin31" to="HUD" method="_on_coin_31_coin_collected"]
+[connection signal="coin_collected" from="coin32" to="HUD" method="_on_coin_32_coin_collected"]
+[connection signal="coin_collected" from="coin33" to="HUD" method="_on_coin_33_coin_collected"]
+[connection signal="coin_collected" from="coin34" to="HUD" method="_on_coin_34_coin_collected"]
+[connection signal="coin_collected" from="coin36" to="HUD" method="_on_coin_36_coin_collected"]
+[connection signal="coin_collected" from="coin37" to="HUD" method="_on_coin_37_coin_collected"]
+[connection signal="coin_collected" from="coin38" to="HUD" method="_on_coin_38_coin_collected"]
+[connection signal="coin_collected" from="coin39" to="HUD" method="_on_coin_39_coin_collected"]
+[connection signal="coin_collected" from="coin40" to="HUD" method="_on_coin_40_coin_collected"]
+[connection signal="coin_collected" from="coin41" to="HUD" method="_on_coin_41_coin_collected"]
+[connection signal="coin_collected" from="coin42" to="HUD" method="_on_coin_42_coin_collected"]
+[connection signal="coin_collected" from="coin43" to="HUD" method="_on_coin_43_coin_collected"]
+[connection signal="coin_collected" from="coin44" to="HUD" method="_on_coin_44_coin_collected"]
+[connection signal="coin_collected" from="coin45" to="HUD" method="_on_coin_45_coin_collected"]
+[connection signal="coin_collected" from="coin46" to="HUD" method="_on_coin_46_coin_collected"]
+[connection signal="coin_collected" from="coin47" to="HUD" method="_on_coin_47_coin_collected"]
+[connection signal="coin_collected" from="coin48" to="HUD" method="_on_coin_48_coin_collected"]
+[connection signal="coin_collected" from="coin49" to="HUD" method="_on_coin_49_coin_collected"]
+[connection signal="coin_collected" from="coin50" to="HUD" method="_on_coin_50_coin_collected"]
+[connection signal="coin_collected" from="coin51" to="HUD" method="_on_coin_51_coin_collected"]
+[connection signal="coin_collected" from="coin35" to="HUD" method="_on_coin_35_coin_collected"]
