@@ -19,21 +19,21 @@ public partial class CoffeePath : Sprite2D
 
 	public override void _PhysicsProcess(double delta)
 	{
-		if (ticker % 2 != 0 )
+		if (ticker % 2 != 0)
 		{
 			pathFollow.HOffset += (float)(speed * delta);
 		}
-		else 
+		else
 		{
 			pathFollow.HOffset -= (float)(speed * delta);
 		}
-		
+
 		if (pathFollow.HOffset == 5 || pathFollow.HOffset == -5)
 		{
 			ticker++;
 		}
-		
-		
-		 
+
+
+
 	}
 }
