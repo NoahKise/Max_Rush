@@ -1,4 +1,7 @@
-[gd_scene load_steps=21 format=3 uid="uid://dexbao7vj6280"]
+
+[gd_scene load_steps=20 format=3 uid="uid://dexbao7vj6280"]
+
+
 
 [ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
@@ -18,11 +21,20 @@
 [ext_resource type="PackedScene" uid="uid://b87nodepecjp5" path="res://scenes/coffee.tscn" id="10_fqxxj"]
 [ext_resource type="PackedScene" uid="uid://1ot4lfmfqo5m" path="res://coin.tscn" id="11_survk"]
 [ext_resource type="PackedScene" uid="uid://cd52p5d35mw3k" path="res://scenes/Bus.tscn" id="12_ihq31"]
+[ext_resource type="Texture2D" uid="uid://jte4kdqyhcnm" path="res://assets/HUD/coin_gold.png" id="15_ahkyt"]
+[ext_resource type="Script" path="res://scenes/HUD.gd" id="15_v303g"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_bt116"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_cyd7n"]
 size = Vector2(0.985072, 1.03448)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uxvp"]
+bg_color = Color(0, 0, 0, 0.478431)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
 
 [node name="LevelOne" type="Node2D"]
 
@@ -593,6 +605,7 @@ scale = Vector2(0.0298508, 0.0689655)
 stream = ExtResource("9_r22rl")
 volume_db = 5.153
 
+
 [node name="Bouncer7" type="MeshInstance2D" parent="."]
 position = Vector2(7499, 948)
 scale = Vector2(52.9991, 14.5)
@@ -795,3 +808,44 @@ volume_db = 5.153
 visible = false
 position = Vector2(10428, 88)
 scale = Vector2(3, 3.8)
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("15_v303g")
+
+[node name="Panel" type="Panel" parent="HUD"]
+offset_left = -845.0
+offset_top = 208.0
+offset_right = -741.0
+offset_bottom = 253.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_0uxvp")
+
+[node name="TextureRect" type="TextureRect" parent="HUD"]
+anchors_preset = -1
+anchor_bottom = 0.191
+offset_left = -833.0
+offset_top = 219.0
+offset_right = -811.0
+offset_bottom = 210.44
+texture = ExtResource("15_ahkyt")
+expand_mode = 2
+
+[node name="x" type="Label" parent="HUD"]
+offset_left = -803.0
+offset_top = 214.0
+offset_right = -784.0
+offset_bottom = 247.0
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
+theme_override_font_sizes/font_size = 15
+text = "x"
+vertical_alignment = 1
+
+[node name="Coins" type="Label" parent="HUD"]
+offset_left = -785.0
+offset_top = 213.0
+offset_right = -746.0
+offset_bottom = 250.0
+theme_override_colors/font_color = Color(1, 0.6, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "##"
+vertical_alignment = 1
+
