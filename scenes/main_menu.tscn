@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://c01w7bm0mi6bt"]
+[gd_scene load_steps=11 format=3 uid="uid://c01w7bm0mi6bt"]
 
 [ext_resource type="Script" path="res://main_menu.cs" id="1_ymql8"]
 [ext_resource type="Texture2D" uid="uid://b25c42x2qktc1" path="res://max_rush_logo.png" id="2_btlr8"]
@@ -17,6 +17,14 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jge0j"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
 [sub_resource type="Theme" id="Theme_aipmv"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1sfw"]
@@ -31,6 +39,14 @@ border_width_top = 2
 border_width_right = 2
 border_width_bottom = 2
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vo8jc"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
 [node name="MainMenu" type="Node2D"]
 position = Vector2(0, 32)
 script = ExtResource("1_ymql8")
@@ -43,6 +59,7 @@ offset_bottom = 80.0
 theme = SubResource("Theme_arhf6")
 theme_override_styles/normal = SubResource("StyleBoxFlat_swekf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_qjmw3")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_jge0j")
 text = "Start"
 
 [node name="Quit" type="Button" parent="."]
@@ -51,8 +68,10 @@ offset_top = 88.0
 offset_right = 200.0
 offset_bottom = 120.0
 theme = SubResource("Theme_aipmv")
+theme_override_constants/outline_size = 0
 theme_override_styles/normal = SubResource("StyleBoxFlat_p1sfw")
 theme_override_styles/hover = SubResource("StyleBoxFlat_xqqgq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_vo8jc")
 text = "Quit"
 
 [node name="MaxRushLogo" type="Sprite2D" parent="."]
