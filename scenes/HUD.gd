@@ -8,8 +8,10 @@ func _ready():
 func _physics_process(delta):
 	#if coins == 28:
 	pass
+
 		
 
+
+
 func _on_coin_collected():
-	coins = coins + 1
-	_ready()
+	pass # Replace with function body.
