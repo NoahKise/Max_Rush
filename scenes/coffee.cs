@@ -16,7 +16,7 @@ public partial class coffee : StaticBody2D
 	{
 		if (body.Name == "player")
 		{
-			gdScriptNode.Call("set_speed", 600);
+			gdScriptNode.Call("set_speed", 650);
 			delayTimer.Start();
 			Vector2 newPosition = new Vector2(0, -10000); // Set your desired position here
 			this.GlobalPosition = newPosition;
