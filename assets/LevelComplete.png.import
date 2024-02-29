@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b25c42x2qktc1"
-path="res://.godot/imported/max_rush_logo.png-73c89f00fb9cc13406dc186bf813b0b0.ctex"
+uid="uid://cudi370ufmblr"
+path="res://.godot/imported/LevelComplete.png-a0d650a479092b3962f2eeeb34a684e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://max_rush_logo.png"
-dest_files=["res://.godot/imported/max_rush_logo.png-73c89f00fb9cc13406dc186bf813b0b0.ctex"]
+source_file="res://assets/LevelComplete.png"
+dest_files=["res://.godot/imported/LevelComplete.png-a0d650a479092b3962f2eeeb34a684e5.ctex"]
 
 [params]
 

@@ -7,6 +7,8 @@ func _ready():
 
 func _physics_process(delta):
 	#if coins == 28:
+	pass
+
 		
 
 
