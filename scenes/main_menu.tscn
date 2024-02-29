@@ -1,0 +1,64 @@
+[gd_scene load_steps=9 format=3 uid="uid://c01w7bm0mi6bt"]
+
+[ext_resource type="Script" path="res://main_menu.cs" id="1_ymql8"]
+[ext_resource type="Texture2D" uid="uid://b25c42x2qktc1" path="res://max_rush_logo.png" id="2_btlr8"]
+
+[sub_resource type="Theme" id="Theme_arhf6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_swekf"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qjmw3"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="Theme" id="Theme_aipmv"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p1sfw"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqqgq"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[node name="MainMenu" type="Node2D"]
+position = Vector2(0, 32)
+script = ExtResource("1_ymql8")
+
+[node name="Start" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 48.0
+offset_right = 200.0
+offset_bottom = 80.0
+theme = SubResource("Theme_arhf6")
+theme_override_styles/normal = SubResource("StyleBoxFlat_swekf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qjmw3")
+text = "Start"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 88.0
+offset_right = 200.0
+offset_bottom = 120.0
+theme = SubResource("Theme_aipmv")
+theme_override_styles/normal = SubResource("StyleBoxFlat_p1sfw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqqgq")
+text = "Quit"
+
+[node name="MaxRushLogo" type="Sprite2D" parent="."]
+position = Vector2(160, 3)
+scale = Vector2(0.85355, 0.675)
+texture = ExtResource("2_btlr8")
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

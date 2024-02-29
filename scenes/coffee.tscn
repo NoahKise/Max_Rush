@@ -6,9 +6,9 @@
 
 [sub_resource type="Curve2D" id="Curve2D_o5q5b"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, -1, 16, 0, 0, 0, 0, 0, -42, 0, 0, 0, 0, 40, -44, 0, 0, 0, 0, 38, 16, 0, 0, 0, 0, -1, 16)
+"points": PackedVector2Array(0, 0, 0, 0, -1, 16, 0, 0, 0, 0, 0, -42, 0, 0, 0, 0, -1, 16)
 }
-point_count = 5
+point_count = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8rb1"]
 size = Vector2(2.5, 3)

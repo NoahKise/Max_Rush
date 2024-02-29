@@ -32,9 +32,5 @@ public partial class CoffeePath : Sprite2D
 		{
 			ticker++;
 		}
-		
-		
-		
-		GD.Print(pathFollow.HOffset);
 	}
 }
