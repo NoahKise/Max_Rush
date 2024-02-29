@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://dexbao7vj6280"]
 
-[ext_resource type="PackedScene" uid="uid://cnthmrsxrbkd4" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
+[ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
 [ext_resource type="PackedScene" uid="uid://dya5gr48i28x8" path="res://scenes/ladder.tscn" id="1_gbr52"]
 [ext_resource type="PackedScene" uid="uid://crihon7a75fvs" path="res://scripts/bounce_area.tscn" id="1_s37pb"]
@@ -58,9 +58,10 @@ position = Vector2(414, 1230)
 
 [node name="Coffee" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(925, 1242)
+collision_layer = 8
 
 [node name="coin" parent="." instance=ExtResource("11_survk")]
-position = Vector2(656, 1247)
+position = Vector2(713, 1214)
 
 [node name="Bus" parent="." instance=ExtResource("12_ihq31")]
 z_index = 10
@@ -68,22 +69,28 @@ position = Vector2(11099, 1201)
 
 [node name="Dog2" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(2222, 992)
+collision_layer = 16
 
 [node name="Coffee2" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(2460, 978)
+collision_layer = 8
 
 [node name="Coffee4" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(3887, 894)
+collision_layer = 8
 
 [node name="Coffee3" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(5295, 409)
+collision_layer = 8
 
 [node name="Dog3" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(5330, 1258)
+collision_layer = 16
 
 [node name="player" parent="." instance=ExtResource("1_eruw3")]
 z_index = 15
 position = Vector2(-345, 504)
+collision_layer = 30
 
 [node name="Music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-21, -1272)
