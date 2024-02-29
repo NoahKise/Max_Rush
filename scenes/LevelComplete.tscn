@@ -1,0 +1,82 @@
+[gd_scene load_steps=11 format=3 uid="uid://blb7dkr8t1k1b"]
+
+[ext_resource type="Script" path="res://scripts/LevelComplete.cs" id="1_1cjoy"]
+[ext_resource type="Texture2D" uid="uid://cudi370ufmblr" path="res://assets/LevelComplete.png" id="2_ny1ib"]
+
+[sub_resource type="Theme" id="Theme_y7nnk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5qqmm"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bp0n2"]
+bg_color = Color(0, 0.360784, 0.694118, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_je504"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+
+[sub_resource type="Theme" id="Theme_2sss8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l2j5f"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_quo3a"]
+bg_color = Color(1, 0.6, 0, 1)
+skew = Vector2(-0.5, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sxuog"]
+bg_color = Color(1, 0.286275, 0.619608, 1)
+skew = Vector2(0.75, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+
+[node name="LevelComplete" type="Node2D"]
+script = ExtResource("1_1cjoy")
+
+[node name="PlayAgain" type="Button" parent="."]
+offset_left = 104.0
+offset_top = 80.0
+offset_right = 216.0
+offset_bottom = 112.0
+theme = SubResource("Theme_y7nnk")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5qqmm")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bp0n2")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_je504")
+text = "Play again"
+
+[node name="Quit" type="Button" parent="."]
+offset_left = 120.0
+offset_top = 120.0
+offset_right = 200.0
+offset_bottom = 152.0
+theme = SubResource("Theme_2sss8")
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("StyleBoxFlat_l2j5f")
+theme_override_styles/hover = SubResource("StyleBoxFlat_quo3a")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_sxuog")
+text = "Quit"
+
+[node name="LevelComplete" type="Sprite2D" parent="."]
+position = Vector2(160, 40)
+scale = Vector2(0.638581, 0.75)
+texture = ExtResource("2_ny1ib")
+
+[connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

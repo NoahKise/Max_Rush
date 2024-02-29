@@ -4,6 +4,7 @@ using System;
 public partial class Bus : Node
 {
 	private AnimatedSprite2D _busSprite;
+	
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -18,7 +19,12 @@ public partial class Bus : Node
 			_busSprite.Play("Open");
 		}
 	}
-
+	
+	private void _on_bus_sprite_animation_finished()
+	{
+		GetTree().ChangeSceneToFile("res://scenes/LevelComplete.tscn");
+	}
+	
 	public void OnBodyExited(Node2D body)
 	{
 		_busSprite.Play("Idle");
@@ -28,3 +34,4 @@ public partial class Bus : Node
 	{
 	}
 }
+
