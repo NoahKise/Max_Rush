@@ -1,7 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c01w7bm0mi6bt"]
 
-[ext_resource type="Script" path="res://main_menu.cs" id="1_ymql8"]
-[ext_resource type="Texture2D" uid="uid://b25c42x2qktc1" path="res://max_rush_logo.png" id="2_btlr8"]
+[ext_resource type="Script" path="res://scripts/main_menu.cs" id="1_ymql8"]
+[ext_resource type="Texture2D" uid="uid://b25c42x2qktc1" path="res://assets/max_rush_logo.png" id="2_btlr8"]
 
 [sub_resource type="Theme" id="Theme_arhf6"]
 

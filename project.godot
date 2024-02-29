@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Max Rush- Transit Trouble"
 run/main_scene="res://scenes/main_menu.tscn"
-config/features=PackedStringArray("4.2", "C#", "GL Compatibility")
+config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
@@ -61,7 +61,11 @@ climb={
 
 [layer_names]
 
+2d_physics/layer_1="Player"
 2d_physics/layer_2="Bounce"
+2d_physics/layer_3="Platform"
+2d_physics/layer_4="Item"
+2d_physics/layer_5="Enemy"
 
 [rendering]
 

@@ -1,4 +1,6 @@
+
 [gd_scene load_steps=20 format=3 uid="uid://dexbao7vj6280"]
+
 
 [ext_resource type="PackedScene" uid="uid://b70fiya833dbp" path="res://scenes/BasicBackdrop.tscn" id="1_e2mjt"]
 [ext_resource type="PackedScene" uid="uid://didg2tm83550w" path="res://scenes/player.tscn" id="1_eruw3"]
@@ -65,12 +67,13 @@ pitch_scale = 0.97
 
 [node name="Coffee" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(925, 1242)
+collision_layer = 8
 
 [node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee"]
 stream = ExtResource("7_etp1i")
 
 [node name="coin" parent="." instance=ExtResource("11_survk")]
-position = Vector2(656, 1247)
+position = Vector2(713, 1214)
 
 [node name="Bus" parent="." instance=ExtResource("12_ihq31")]
 z_index = 10
@@ -82,30 +85,35 @@ stream = ExtResource("8_qb44f")
 
 [node name="Dog2" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(2222, 992)
+collision_layer = 16
 
 [node name="DogSound" type="AudioStreamPlayer2D" parent="Dog2"]
 stream = ExtResource("5_cdjec")
 
 [node name="Coffee2" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(2460, 978)
+collision_layer = 8
 
 [node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee2"]
 stream = ExtResource("7_etp1i")
 
 [node name="Coffee4" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(3887, 894)
+collision_layer = 8
 
 [node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee4"]
 stream = ExtResource("7_etp1i")
 
 [node name="Coffee3" parent="." instance=ExtResource("10_fqxxj")]
 position = Vector2(5295, 409)
+collision_layer = 8
 
 [node name="CoffeeSound" type="AudioStreamPlayer2D" parent="Coffee3"]
 stream = ExtResource("7_etp1i")
 
 [node name="Dog3" parent="." instance=ExtResource("9_u5m5q")]
 position = Vector2(5330, 1258)
+collision_layer = 16
 
 [node name="DogSound" type="AudioStreamPlayer2D" parent="Dog3"]
 stream = ExtResource("5_cdjec")
@@ -113,6 +121,7 @@ stream = ExtResource("5_cdjec")
 [node name="player" parent="." instance=ExtResource("1_eruw3")]
 z_index = 15
 position = Vector2(-345, 504)
+collision_layer = 30
 
 [node name="Music" type="AudioStreamPlayer2D" parent="player"]
 position = Vector2(-21, -1272)
