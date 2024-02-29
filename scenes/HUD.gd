@@ -1,14 +1,15 @@
 extends CanvasLayer
 
 @export var coins = 0
+@export var win = false
 
 func _ready():
 	$Coins.text = str(int(coins))
 	pass
 
 func _physics_process(delta):
-	#if coins == 28:
-	pass
+	if coins >= 28:
+		win = true
 
 func _on_coin_coin_collected():
 	coins += 1
