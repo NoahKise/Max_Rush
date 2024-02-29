@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://btmc8eg3gx4or"]
+[gd_scene load_steps=12 format=3 uid="uid://btmc8eg3gx4or"]
 
 [ext_resource type="Script" path="res://scripts/Failure.cs" id="1_rvuqj"]
+[ext_resource type="FontFile" uid="uid://b8aa5vyimbm7l" path="res://assets/fonts/RacingSansOne-Regular.ttf" id="2_r2cxe"]
 
 [sub_resource type="Theme" id="Theme_yslps"]
 
@@ -46,6 +47,10 @@ border_width_top = 4
 border_width_right = 4
 border_width_bottom = 4
 
+[sub_resource type="Theme" id="Theme_rjb4s"]
+default_font = ExtResource("2_r2cxe")
+default_font_size = 29
+
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_rvuqj")
 
@@ -71,6 +76,14 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_yxim8")
 theme_override_styles/hover = SubResource("StyleBoxFlat_hkfg1")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ly6ea")
 text = "Quit"
+
+[node name="Label" type="Label" parent="."]
+offset_left = 16.0
+offset_top = 24.0
+offset_right = 304.0
+offset_bottom = 72.0
+theme = SubResource("Theme_rjb4s")
+text = "YOU MISSED THE BUS"
 
 [connection signal="pressed" from="PlayAgain" to="." method="_on_play_again_pressed"]
 [connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
