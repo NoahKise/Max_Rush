@@ -45,6 +45,7 @@ by Ravin Fisher, Noah Kise, Teddy Peterschmidt and Henry Oberholzer
 * [Devurandom - 8bit City Tile Set](https://opengameart.org/content/8-bit-city-tile-set)
 * Sounds from [Pixabay](https://pixabay.com/)
 * Character sprite and dog sprite from [Free Game Assets](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)
+* Coin sprite from [kenny.nl](https://www.kenney.nl/)
 
 # License
 
